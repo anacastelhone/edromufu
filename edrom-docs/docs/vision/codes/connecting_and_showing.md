@@ -37,7 +37,7 @@ sys.setrecursionlimit(100000)
 
 Nesse código temos algumas importações:
 
-- __“rospy”__ = Biblioteca de Python para o ROS
+- __“rclpy”__ = Biblioteca de Python para o ROS 2
 
 - __“ROS_Image”__ = Tipo de mensagem utilizada pelo webots, que neste caso utilizamos para receber as imagens quando o código é utilizado no webots
 
@@ -55,7 +55,7 @@ Após as importações temos algumas definições:
 
 - __“sys.setrecursionLimit”__ = Define a profundidade máxima da pilha do interpretador Python para o limite setado.
 
-- __“width ”__ e __“height”__ = Define a altura e a largura da imagem que será analisada
+
 
 
 ```py title="object_finder/src/connecting_and_showing.py"
@@ -286,13 +286,13 @@ def connect_to_webots(self):
 
         self.opencv_bridge = CvBridge()
         
-        #try:
-        #    self.current_frame = self.opencv_bridge.imgmsg_to_cv2(message, desired_encoding="bgr8")
+        try:
+          self.current_frame = self.opencv_bridge.imgmsg_to_cv2(message, desired_encoding="bgr8")
         
-        #except Exception as e:
-        #    print(f"{e}")
+        except Exception as e:
+           print(f"{e}")
 
-        #self.send_current_frame_to_inference()
+        self.send_current_frame_to_inference()
         
 
 ```
