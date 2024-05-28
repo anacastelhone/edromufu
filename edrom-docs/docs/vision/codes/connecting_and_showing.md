@@ -53,7 +53,7 @@ Nesse código temos algumas importações:
 
 Após as importações temos algumas definições:
 
-- __“sys.setrecursionLimit”__ = Define a profundidade máxima da pilha do interpretador Python para o limite setado.
+- __“sys.setrecursionlimit”__ = Define a profundidade máxima da pilha do interpretador Python para o limite setado.
 
 
 
@@ -116,7 +116,7 @@ def __init__(self,nome_no):
         self.get_webcam()
 
         #SE FOR NO WEBOTS
-        #self.connect_to_webots()
+        self.connect_to_webots()
 ```
 
 A função construtora da nossa classe, onde setamos e buscamos algumas informações.
@@ -137,7 +137,7 @@ A função construtora da nossa classe, onde setamos e buscamos algumas informa�
 
 -	__“cap.set”__ = ajustamos o brilho da nossa camera com o valor recebido pelo launch
 
--	__“rospy.Publisher”__ = Iniciamos nosso publisher que irá publicar os resultados da nossa detecção.
+-	__“rcply.Publisher”__ = Iniciamos nosso publisher que irá publicar os resultados da nossa detecção.
 
 -	__“get_webcam”__ e __“connect_to_webots”__ = começamos a rodar nossa primeira função dentro desse código. Se queremos que o código rode na robo real utilizamos __"get_webcam()"__ e se quisermos que ele rode dentro do webots utilizamos __"connect_to_webots()"__.
 
