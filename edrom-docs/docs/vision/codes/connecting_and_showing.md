@@ -116,28 +116,20 @@ def __init__(self,nome_no):
         self.get_webcam()
 
         #SE FOR NO WEBOTS
-        self.connect_to_webots()
+        #self.connect_to_webots()
 ```
 
 A função construtora da nossa classe, onde setamos e buscamos algumas informações.
 
--	__“get_param”__ = Primeira coisa que fazemos é buscar as informações fornecidas pelo nosso launch e colocar nas variaveis __“self.camera”__, ”__self.ouput_img”__, __“self.ajuste”__, __“self.bright”__
+-	__“get_parameter_value”__ = Primeira coisa que fazemos é buscar as informações fornecidas pelo nosso launch e colocar nas variaveis __“self.camera”__, ”__self.ouput_img”__, __“self.ajuste”__, __“self.bright”__
 
--	__“init_node”__ = Iniciamos aqui o nosso node __“vision”__ onde rodará os processos
+-	__“super().init”__ = Iniciamos aqui o nosso nó vision onde rodarão os processos.
+  
+-	__“ri.set_model_input”__ = Função do __“running_inference.py”__ que obtém os arquivos que definem a rede neural.
+  
+-	__“self.searching”__: Inicializamos a nossa variável de procura para __“True”__, para garantir que a detecção está rodando corretamente.
 
--	__“get_cnn_files”__ = função do __“running_inference.py”__
-
--	__“setPreferableBackend”__ e __“setPreferableTarget”__ = funções para rodarmos nosso código com o CUDA ativado
-
--	__“set_model_input”__ = função do __“running_inference.py”__
-
--	__“self.searching”__ = iniciando a nossa variável de procura para True, para que quando formos publicar temos a confirmação que está rodando certo a detecção
-
--	__“cv2.VideoCapture”__ = setamos aqui variável que será nossa câmera
-
--	__“cap.set”__ = ajustamos o brilho da nossa camera com o valor recebido pelo launch
-
--	__“rcply.Publisher”__ = Iniciamos nosso publisher que irá publicar os resultados da nossa detecção.
+-	__“create_publisher”__: Iniciamos nosso publisher que irá publicar os resultados da nossa detecção.
 
 -	__“get_webcam”__ e __“connect_to_webots”__ = começamos a rodar nossa primeira função dentro desse código. Se queremos que o código rode na robo real utilizamos __"get_webcam()"__ e se quisermos que ele rode dentro do webots utilizamos __"connect_to_webots()"__.
 
